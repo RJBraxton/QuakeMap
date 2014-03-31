@@ -1,0 +1,32 @@
+html { 
+/*background-color: #ffffff;*/
+  height:100%;
+  background: #999; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#707070', endColorstr='#CCCCCC'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#707070), to(#CCCCCC)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #707070,  #CCCCCC); /* for firefox 3.6+ */
+}
+
+hr.style-motif {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-motif:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;    
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+hr.style-cloud {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+}

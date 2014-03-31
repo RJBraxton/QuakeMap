@@ -1,0 +1,60 @@
+quakemap.factory('q', function($rootScope, $http, $interval){
+	return {
+		generate: function($rootScope, $scope){
+			$scope.remove();
+			var query = '';
+			for (var property in $scope.settings) {
+				if ($scope.settings[property]) {
+					var query = query + "&" + property + "=" + $scope.settings[property];
+				}
+			}
+			$http({method: 'GET', url: ("http://www.corsproxy.com/comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=geojson")})	
+			.success(function(data){
+				$scope.errorCheck(true);
+				$scope.window.lastUpdated = "Last updated at " + moment().format("hh:mma");
+				$scope.window.count = data.metadata.count;
+				$scope.urls.csv = "http://comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=csv";
+				$scope.urls.geojson = "http://comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=geojson";
+				$scope.urls.kml = "http://comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=kml";
+				$scope.urls.xml = "http://comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=xml";
+				quakes = d3.select("#map").append("g")
+				.attr("class", "quakes") 
+				.selectAll(".quake")
+				.data(data.features)
+				.enter().append("g")
+				.attr("class", "quake")
+				.attr("transform", function(d) {return "translate(" + $rootScope.projection(d.geometry.coordinates)[0] + "," + $rootScope.projection(d.geometry.coordinates)[1] + ")";});
+				quakes.append("circle")
+				.attr("class","quakeStatic")
+				.attr("r", 1.5)
+				.style("stroke", function(d) {return colorMagScale(d.properties.mag);})          
+				.style("stroke-width", 0.75)
+				.on("click",  function(d){
+					$scope.click(d);
+				});
+				d3.selectAll(".quakes").attr("transform", "translate(" + $rootScope.oT + ")scale(" + $rootScope.oS + ")");
+				below4 = quakes.filter(function(d){ return d.properties.mag > 4.0;});
+				$scope.quakesBelow4 = below4;
+				if($scope.animation){ //If animation is turned off, don't let it start again
+					$scope.setInterval(below4);
+				};
+
+			})
+				.error(function(){
+					$scope.errorCheck(false);
+				}
+				);
+		},
+		remove: function($scope){
+			$('.error').remove();
+			$(".quake").remove(); //Delete all quakes
+			for (var property in $scope.window) {
+				if ($scope.window[property]) {
+					$scope.window[property] = '';
+				}
+			};
+			$scope.window.count = '-';
+			$scope.window.lastUpdated = '-';
+		}
+	};
+})

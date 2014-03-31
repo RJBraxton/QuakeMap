@@ -1,0 +1,14 @@
+For the left column, lay it out as such
+
+-SIGNIFICANCE
+-DEPTH
+-MAGNITUDE
+
+For magnitude, show five circles, that display text below once the mouseover occurs
+Depth, maybe an example svg?
+Significance, maybe just text
+
+
+
+
+AAnimtoggle is REALLY INEFFICIENT

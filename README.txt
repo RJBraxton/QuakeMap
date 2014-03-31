@@ -1,0 +1,2 @@
+QUAKEMAP is a web application project created by Richard Braxton. It's goal is to create a center for people to monitor and learn about earthquakes and how they affect the world.
+It is a work in progress and built using D3.js, moment.js, and feng-shui'd via Twitter Bootstrap.
