@@ -57,4 +57,14 @@ quakemap.factory('q', function($rootScope, $http, $interval){
 			$scope.window.lastUpdated = '-';
 		}
 	};
-})
+});
+
+quakemap.directive('chart', [function() {
+  return {
+    restrict: 'E',
+    link: function(scope, elem, attrs) {
+    	
+        $.plot(elem, [ [[0, 0], [1, 1]] ], { yaxis: { max: 1 } });
+    }
+  };
+}]);	

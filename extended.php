@@ -31,6 +31,7 @@
           <div id="my-tab-content" class="tab-content">
             <div class="tab-pane active" id="settings" >
               <input type="radio" ng-model="settings.orderby" value="magnitude">Largest </input>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <input type="radio" ng-model="settings.orderby" value="time">Most Recent </input>
               <br> 
             <br>Limit: <input class="input-mini" ng-model="settings.limit"></input>
@@ -40,7 +41,7 @@
             <br> <input class="input-mini" maxlength="3" ng-model="settings.minmagnitude"></input> - <input class="input-mini" maxlength="3" ng-model="settings.maxmagnitude"></input>  
             <br>Depth Range (km)
             <br> <input class="input-mini" ng-model="settings.mindepth"></input> - <input class="input-mini"  ng-model="settings.maxdepth"></input>  
-            <br>Latitude/Longitude
+            <br>Latitude/Longitude (Square)
             <br> N: <input class="input-mini" ng-model="settings.maxlatitude"></input> S: <input class="input-mini" ng-model="settings.minlatitude"></input>
             <br> E: <input class="input-mini" ng-model="settings.maxlongitude"></input> W: <input class="input-mini" ng-model="settings.minlongitude"></input>
           </div>
@@ -83,9 +84,7 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span12 well">
-
-This version of QuakeMap Extended is currently in development. There are several additional features/small fixes due to be added within the coming days/weeks. This version is designed to offer an equally intuitive, yet more detailed way to view and monitor seismic activity through time.
-
+    	<chart></chart>
     </div>
   </div>
   <hr class="style-motif"/>
@@ -121,9 +120,6 @@ This version of QuakeMap Extended is currently in development. There are several
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./assets/js/jquery-1.9.1.js"></script>
-    <script src="./assets/js/jquery-ui-1.10.3.custom.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

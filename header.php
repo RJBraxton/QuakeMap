@@ -47,6 +47,10 @@
   <script src="angular.js" type="text/javascript"></script>
   <script src="angular.services.js" type="text/javascript"></script>
   <script src="angular.controllers.js" type="text/javascript"></script>
+    <script src="./assets/js/jquery-1.9.1.js"></script>
+    <script src="./assets/js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="./assets/js/jquery.flot.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <!-- Dependencies end-->
 
 </head>
