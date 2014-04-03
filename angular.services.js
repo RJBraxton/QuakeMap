@@ -10,6 +10,12 @@ quakemap.factory('q', function($rootScope, $http, $interval){
 			}
 			$http({method: 'GET', url: ("http://www.corsproxy.com/comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=geojson")})	
 			.success(function(data){
+				$scope.data = [];
+				for (i=0; i<data.features.length;i++){
+					$scope.data.push(
+						[data.features[i].properties.time, data.features[i].properties.mag]
+						);
+				};
 				$scope.errorCheck(true);
 				$scope.window.lastUpdated = "Last updated at " + moment().format("hh:mma");
 				$scope.window.count = data.metadata.count;
@@ -64,7 +70,18 @@ quakemap.directive('chart', [function() {
     restrict: 'E',
     link: function(scope, elem, attrs) {
     	
-        $.plot(elem, [ [[0, 0], [1, 1]] ], { yaxis: { max: 1 } });
+    	var foo = scope[attrs.ngModel];
+    	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
+
+    	var chart = $.plot(elem, [[0,0],[1,1]], opts);
+
+
+        scope.$watch("data", function(v){
+                    chart.setData([v]);
+                    chart.setupGrid();
+                    chart.draw();
+                });
+
     }
   };
 }]);	

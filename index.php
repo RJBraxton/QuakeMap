@@ -207,6 +207,8 @@
 
   ga('create', 'UA-43225832-2', 'quake-map.com');
   ga('send', 'pageview');
+  $('.dropdown-toggle').dropdown();
+
 
 </script>
   </body>

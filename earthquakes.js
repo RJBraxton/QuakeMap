@@ -66,7 +66,7 @@ function mapWorld(){
     zoom.translate(t);
 
     svg.attr("transform", "translate(" + t + ")scale(" + s + ")");
-    d3.selectAll(".quakes").attr("transform", "translate(" + t + ")scale(-599*" + s + ")");
+    d3.selectAll(".quakes").attr("transform", "translate(" + t + ")scale(" + s + ")");
     oT = t;
     oS = s;
   }

@@ -66,6 +66,8 @@ quakemap.controller('Settings', function($rootScope, $scope, $interval, q){
 		'xml': ''
 	};
 
+	$scope.data =[];
+
 
 	//Quakemapping Functions
 	$scope.generate = function () {
