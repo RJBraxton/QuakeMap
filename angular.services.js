@@ -13,7 +13,7 @@ quakemap.factory('q', function($rootScope, $http, $interval){
 				$scope.data = [];
 				for (i=0; i<data.features.length;i++){
 					$scope.data.push(
-						[data.features[i].properties.time, data.features[i].properties.mag]
+						[data.features[i].properties.time, data.features[i].properties.mag, data.features[i].properties.depth]
 						);
 				};
 				$scope.errorCheck(true);
@@ -59,6 +59,7 @@ quakemap.factory('q', function($rootScope, $http, $interval){
 					$scope.window[property] = '';
 				}
 			};
+			$scope.data = [];
 			$scope.window.count = '-';
 			$scope.window.lastUpdated = '-';
 		}
@@ -71,9 +72,26 @@ quakemap.directive('chart', [function() {
     link: function(scope, elem, attrs) {
     	
     	var foo = scope[attrs.ngModel];
-    	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
+    	var opts = {
+    		xaxis: {mode: 'time', autoscaleMargin: 0.05, minTickSize: [1, "day"]},
+    		yaxis: {},
+    		grid: {hoverable: true},
+    		points: {
+    			show: true,
+    			radius: 10,
+    			fill: true
+    		},
+    		tooltip: true,
+    		tooltipOpts: {
+					content: "%x: M%y",
+					shifts: {
+						x: -60,
+						y: 25
+					}
+				}
+    	};
 
-    	var chart = $.plot(elem, [[0,0],[1,1]], opts);
+    	var chart = $.plot(elem, [[0,0]], opts);
 
 
         scope.$watch("data", function(v){
