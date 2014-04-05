@@ -13,7 +13,7 @@ quakemap.factory('q', function($rootScope, $http, $interval){
 				$scope.data = [];
 				for (i=0; i<data.features.length;i++){
 					$scope.data.push(
-						[data.features[i].properties.time, data.features[i].properties.mag, data.features[i].properties.depth]
+						[data.features[i].properties.time, data.features[i].properties.mag, data.features[i].geometry.coordinates[2]]
 						);
 				};
 				$scope.errorCheck(true);
@@ -70,12 +70,15 @@ quakemap.directive('chart', [function() {
   return {
     restrict: 'E',
     link: function(scope, elem, attrs) {
-    	
+    	var scale = d3.scale.linear().domain([2.0,4.5,7.5,8.5]).range(["green","blue", "orange","red"])
     	var foo = scope[attrs.ngModel];
     	var opts = {
     		xaxis: {mode: 'time', autoscaleMargin: 0.05, minTickSize: [1, "day"]},
     		yaxis: {},
-    		grid: {hoverable: true},
+    		grid: {
+    			hoverable: true,
+    			show: true
+    		},
     		points: {
     			show: true,
     			radius: 10,
@@ -83,7 +86,7 @@ quakemap.directive('chart', [function() {
     		},
     		tooltip: true,
     		tooltipOpts: {
-					content: "%x: M%y",
+					content: function(label, xval, yval, depth, flotItem){ return "M" + yval + ", " + depth.toString() + "km";},
 					shifts: {
 						x: -60,
 						y: 25

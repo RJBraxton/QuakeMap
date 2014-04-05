@@ -1,6 +1,6 @@
 quakemap.controller('Settings', function($rootScope, $scope, $interval, q){
 	//Animation things
-	$scope.animation = true;
+	$scope.animation = false;
 	$scope.animationButton = function(bool){
 		if(bool){ //If is on
 			$interval.cancel($scope.interval);
