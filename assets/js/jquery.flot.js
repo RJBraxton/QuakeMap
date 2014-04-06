@@ -2466,7 +2466,7 @@ Licensed under the MIT license.
                 var points = datapoints.points, ps = datapoints.pointsize;
 
                var colorScale = d3.scale.linear().domain([2.0,4.5,7.5,8.5]).range(["green","blue", "orange","red"]);
-                var depthScale = d3.scale.linear().domain([0,200,400,600]).range(["green","blue", "orange","red"]);
+                var depthScale = d3.scale.linear().domain([0,600]).range([-100,100]);
                 for (var i = 0; i < points.length; i += ps) {
                     var x = points[i], y = points[i + 1], z = points[i+2];
                     if (x == null || x < axisx.min || x > axisx.max || y < axisy.min || y > axisy.max)
@@ -2480,13 +2480,13 @@ Licensed under the MIT license.
                     else
                         symbol(ctx, x, y, radius, shadow);
                     ctx.closePath();
-                    ctx.strokeStyle = colorScale(origy);
-                    if (fillStyle) {
-                        ctx.fillStyle = depthScale(z);
+                    ctx.strokeStyle = colorScale(origy); //magnitude
+                        ctx.fillStyle = d3.rgb(colorScale(origy)).brighter([depthScale(z)]); //depth
+                        //ctx.fillStyle = "#FF00FF99";
                         ctx.fill();
-                    }
 
                     ctx.stroke();
+                    console.log(d3.rgb(colorScale(origy)));
                 }
             }
 
