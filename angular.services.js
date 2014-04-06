@@ -14,7 +14,11 @@ quakemap.factory('q', function($rootScope, $http, $interval){
 				for (i=0; i<data.features.length;i++){
 					$scope.data.push(
 <<<<<<< HEAD
+<<<<<<< HEAD
 						[data.features[i].properties.time, data.features[i].properties.mag, data.features[i].geometry.coordinates[2]]
+=======
+						[data.features[i].properties.time, data.features[i].properties.mag]
+>>>>>>> parent of 38e8a8b... Flot-tooltips added
 =======
 						[data.features[i].properties.time, data.features[i].properties.mag]
 >>>>>>> parent of 38e8a8b... Flot-tooltips added
@@ -76,6 +80,7 @@ quakemap.directive('chart', [function() {
     	var scale = d3.scale.linear().domain([2.0,4.5,7.5,8.5]).range(["green","blue", "orange","red"])
     	var foo = scope[attrs.ngModel];
 <<<<<<< HEAD
+<<<<<<< HEAD
     	var opts = {
     		xaxis: {mode: 'time', autoscaleMargin: 0.05, minTickSize: [1, "day"]},
     		yaxis: {},
@@ -97,6 +102,9 @@ quakemap.directive('chart', [function() {
 					}
 				}
     	};
+=======
+    	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
+>>>>>>> parent of 38e8a8b... Flot-tooltips added
 =======
     	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
 >>>>>>> parent of 38e8a8b... Flot-tooltips added
