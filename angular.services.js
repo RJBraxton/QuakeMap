@@ -71,6 +71,7 @@ quakemap.directive('chart', [function() {
     link: function(scope, elem, attrs) {
     	var scale = d3.scale.linear().domain([2.0,4.5,7.5,8.5]).range(["green","blue", "orange","red"])
     	var foo = scope[attrs.ngModel];
+
     	var opts = {
     		xaxis: {mode: 'time', autoscaleMargin: 0.05, minTickSize: [1, "day"]},
     		yaxis: {},
@@ -91,7 +92,7 @@ quakemap.directive('chart', [function() {
 						y: 25
 					}
 				}
-    	};
+    	};\
     	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
 
     	var chart = $.plot(elem, [[0,0],[1,1]], opts);
