@@ -18,6 +18,7 @@ quakemap.factory('q', function($rootScope, $http, $interval){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e05a35bfad9300bac546f437f0ceb8e818061f27
 						[data.features[i].properties.time, data.features[i].properties.mag, data.features[i].geometry.coordinates[2]]
@@ -36,6 +37,9 @@ quakemap.factory('q', function($rootScope, $http, $interval){
 >>>>>>> parent of 38e8a8b... Flot-tooltips added
 =======
 >>>>>>> e05a35bfad9300bac546f437f0ceb8e818061f27
+=======
+						[data.features[i].properties.time, data.features[i].properties.mag]
+>>>>>>> parent of 38e8a8b... Flot-tooltips added
 						);
 				};
 				$scope.errorCheck(true);
@@ -98,6 +102,7 @@ quakemap.directive('chart', [function() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e05a35bfad9300bac546f437f0ceb8e818061f27
     	var opts = {
@@ -134,6 +139,9 @@ quakemap.directive('chart', [function() {
 =======
 =======
 >>>>>>> e05a35bfad9300bac546f437f0ceb8e818061f27
+    	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
+>>>>>>> parent of 38e8a8b... Flot-tooltips added
+=======
     	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
 >>>>>>> parent of 38e8a8b... Flot-tooltips added
 
