@@ -69,8 +69,33 @@ quakemap.directive('chart', [function() {
   return {
     restrict: 'E',
     link: function(scope, elem, attrs) {
-    	
+    	var scale = d3.scale.linear().domain([2.0,4.5,7.5,8.5]).range(["green","blue", "orange","red"])
     	var foo = scope[attrs.ngModel];
+<<<<<<< HEAD
+
+    	var opts = {
+    		xaxis: {mode: 'time', autoscaleMargin: 0.05, minTickSize: [1, "day"]},
+    		yaxis: {},
+    		grid: {
+    			hoverable: true,
+    			show: true
+    		},
+    		points: {
+    			show: true,
+    			radius: 10,
+    			fill: true
+    		},
+    		tooltip: true,
+    		tooltipOpts: {
+					content: function(label, xval, yval, depth, flotItem){ return "M" + yval + ", " + depth.toString() + "km";},
+					shifts: {
+						x: -60,
+						y: 25
+					}
+				}
+    	};
+=======
+>>>>>>> parent of 38e8a8b... Flot-tooltips added
     	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
 
     	var chart = $.plot(elem, [[0,0],[1,1]], opts);
