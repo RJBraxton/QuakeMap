@@ -1091,6 +1091,7 @@ Licensed under the MIT license.
                     // find out how to copy
                     format.push({ x: true, number: true, required: true });
                     format.push({ y: true, number: true, required: true });
+                    format.push({ depth: true, number: true, required: true });
 
                     if (s.bars.show || (s.lines.show && s.lines.fill)) {
                         var autoscale = !!((s.bars.show && s.bars.zero) || (s.lines.show && s.lines.zero));
@@ -2464,12 +2465,14 @@ Licensed under the MIT license.
             function plotPoints(datapoints, radius, fillStyle, offset, shadow, axisx, axisy, symbol) {
                 var points = datapoints.points, ps = datapoints.pointsize;
 
+               var colorScale = d3.scale.linear().domain([2.0,4.5,7.5,8.5]).range(["green","blue", "orange","red"]);
+                var depthScale = d3.scale.linear().domain([0,600]).range([-100,100]);
                 for (var i = 0; i < points.length; i += ps) {
-                    var x = points[i], y = points[i + 1];
+                    var x = points[i], y = points[i + 1], z = points[i+2];
                     if (x == null || x < axisx.min || x > axisx.max || y < axisy.min || y > axisy.max)
                         continue;
-
                     ctx.beginPath();
+                    origy = y;
                     x = axisx.p2c(x);
                     y = axisy.p2c(y) + offset;
                     if (symbol == "circle")
@@ -2477,12 +2480,13 @@ Licensed under the MIT license.
                     else
                         symbol(ctx, x, y, radius, shadow);
                     ctx.closePath();
-
-                    if (fillStyle) {
-                        ctx.fillStyle = fillStyle;
+                    ctx.strokeStyle = colorScale(origy); //magnitude
+                        ctx.fillStyle = d3.rgb(colorScale(origy)).brighter([depthScale(z)]); //depth
+                        //ctx.fillStyle = "#FF00FF99";
                         ctx.fill();
-                    }
+
                     ctx.stroke();
+                    console.log(d3.rgb(colorScale(origy)));
                 }
             }
 
@@ -2516,7 +2520,6 @@ Licensed under the MIT license.
             }
 
             ctx.lineWidth = lw;
-            ctx.strokeStyle = series.color;
             plotPoints(series.datapoints, radius,
                        getFillStyle(series.points, series.color), 0, false,
                        series.xaxis, series.yaxis, symbol);
