@@ -51,6 +51,7 @@
     <script src="./assets/js/jquery-ui-1.10.3.custom.js"></script>
     <script src="./assets/js/jquery.flot.js"></script>
     <script src="./assets/js/jquery.flot.time.js"></script>
+    <script src="./assets/js/jquery.flot.tooltip.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <!-- Dependencies end-->
 

@@ -212,17 +212,17 @@ if (!Array.prototype.indexOf) {
         var xPatternWithoutPrecision = "%x";
         var yPatternWithoutPrecision = "%y";
 
-        var x, y, depth;
+        var x, y, z;
 
         // for threshold plugin we need to read data from different place
         if (typeof item.series.threshold !== "undefined") {
             x = item.datapoint[0];
             y = item.datapoint[1];
-            depth = item.datapoint[2];
+            z = item.datapoint[2];
         } else {
             x = item.series.data[item.dataIndex][0];
             y = item.series.data[item.dataIndex][1];
-            depth = item.series.data[item.dataIndex][2];
+            z = item.series.data[item.dataIndex][2];
         }
 
         // I think this is only in case of threshold plugin
@@ -232,7 +232,7 @@ if (!Array.prototype.indexOf) {
 
         // if it is a function callback get the content string
         if( typeof(content) === 'function' ) {
-            content = content(item.series.label, x, y, depth, item);
+            content = content(item.series.label, x, y, z, item);
         }
 
         // percent match for pie charts
