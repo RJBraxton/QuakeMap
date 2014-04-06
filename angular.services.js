@@ -92,7 +92,7 @@ quakemap.directive('chart', [function() {
 						y: 25
 					}
 				}
-    	};\
+    	};
     	var opts = {xaxis: {mode: 'time', minTickSize: [1, "day"]}, yaxis: {}, points: { show: true, radius: 10, fill: true }};
 
     	var chart = $.plot(elem, [[0,0],[1,1]], opts);
