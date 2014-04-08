@@ -1,4 +1,4 @@
-quakemap.controller('Settings', function($rootScope, $scope, $interval, q){
+quakemap.controller('Settings', function($rootScope, $scope, $interval, functions){
 	//Animation things
 	$scope.animation = false;
 	$scope.animationButton = function(bool){
@@ -67,15 +67,16 @@ quakemap.controller('Settings', function($rootScope, $scope, $interval, q){
 	};
 
 	$scope.data =[];
+	$rootScope.coors = [];
 
 
 	//Quakemapping Functions
 	$scope.generate = function () {
-		var b = q.generate($rootScope, $scope);
+		var b = functions.generate($rootScope, $scope);
 		return b;
 	};
 	$scope.remove = function(){
-		return q.remove($scope);
+		return functions.remove($scope);
 	};
 	$scope.click = function(d){
 		$scope.$apply(function(){

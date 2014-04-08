@@ -76,6 +76,9 @@
       <p class="text-center">
         {{window.lastUpdated}}
       </p>
+      <p class="text-left">
+      {{$root.coors}}
+      </p>
     </div><!-- /Well -->
   </div><!--/span9-->
 </div><!--/Container-->

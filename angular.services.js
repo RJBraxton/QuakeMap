@@ -1,4 +1,4 @@
-quakemap.factory('q', function($rootScope, $http, $interval){
+quakemap.factory('functions', function($rootScope, $http, $interval){
 	return {
 		generate: function($rootScope, $scope){
 			$scope.remove();
