@@ -102,7 +102,7 @@ quakemap.controller('Settings', function($rootScope, $scope, $interval, q){
 					if (isNaN($scope.settings.maxmagnitude) == true) {
 						errorlog.push("The maximum magnitude value is not formatted properly.");
 					}
-					if (isNaN($scope.settings.maxmagnitude) == false && isNaN($scope.settings.minmagnitude) == false && $scope.settings.maxmagnitude < $scope.settings.minmagnitude) {
+					if (isNaN($scope.settings.maxmagnitude) == false && isNaN($scope.settings.minmagnitude) == false && parseFloat($scope.settings.maxmagnitude) < parseFloat($scope.settings.minmagnitude)) {
 						errorlog.push("The minimum magnitude is greater than the maximum.");
 					}
 					if (isNaN($scope.settings.mindepth) == true) {
@@ -111,7 +111,7 @@ quakemap.controller('Settings', function($rootScope, $scope, $interval, q){
 					if (isNaN($scope.settings.maxdepth) == true) {
 						errorlog.push("The maximum depth value is not formatted properly.");	
 					}
-					if (isNaN($scope.settings.maxdepth) == false && isNaN($scope.settings.maxdepth) == false && $scope.settings.maxdepth < $scope.settings.mindepth) {
+					if (isNaN($scope.settings.maxdepth) == false && isNaN($scope.settings.maxdepth) == false && parseFloat($scope.settings.maxdepth) < parseFloat($scope.settings.mindepth)) {
 						errorlog.push("The minimum depth is greater than the maximum.");
 					}
 					if (isNaN($scope.settings.maxlatitude) == true) {
@@ -120,7 +120,7 @@ quakemap.controller('Settings', function($rootScope, $scope, $interval, q){
 					if (isNaN($scope.settings.minlatitude) == true) {
 						errorlog.push("The South latitude is not formatted properly.")
 					}
-					if (isNaN($scope.settings.maxlatitude) == false && isNaN($scope.settings.minlatitude) == false && $scope.settings.maxlatitude < $scope.settings.minlatitude) {
+					if (isNaN($scope.settings.maxlatitude) == false && isNaN($scope.settings.minlatitude) == false && parseFloat($scope.settings.maxlatitude) < parseFloat($scope.settings.minlatitude)) {
 						errorlog.push("The North latitude is smaller than the South latitude.");	
 					}
 					if (isNaN($scope.settings.maxlongitude) == true) {
@@ -129,7 +129,7 @@ quakemap.controller('Settings', function($rootScope, $scope, $interval, q){
 					if (isNaN($scope.settings.minlongitude) == true) {
 						errorlog.push("The West longitude is not formatted properly.")
 					}
-					if (isNaN($scope.settings.maxlongitude) == false && isNaN($scope.settings.minlongitude) == false && $scope.settings.maxlongitude < $scope.settings.minlongitude) {
+					if (isNaN($scope.settings.maxlongitude) == false && isNaN($scope.settings.minlongitude) == false && parseFloat($scope.settings.maxlongitude) < parseFloat($scope.settings.minlongitude)) {
 						errorlog.push("The East latitude is smaller than the West latitude.");	
 					}
 
