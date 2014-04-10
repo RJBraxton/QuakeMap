@@ -26,9 +26,7 @@ var frequency = d3.scale.linear()
 .domain([600, 0])
 .range([8500, 2000]);
 
-var colorMagScale = d3.scale.linear()
-.domain([2.0,4.5,7.5,8.5])
-.range(["green","blue", "orange","red"]);
+var colorMagScale = d3.scale.linear().domain([2.0,4.0,6.0,7.0,8.0]).range(["#404096","#529DB7", "#7DB874","#E39C37", "#D92120"]);
 
 /*--------------- begin_removeQuakes --------------------------------------------------------------------------------------------------------------*/
 function removeQuakes(){

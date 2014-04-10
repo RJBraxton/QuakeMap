@@ -28,7 +28,7 @@
         <footer>
           <p>&copy; <a href="http://richardbraxton.org/bio/">Richard Braxton</a> 2013
             <text class="pull-right">Sponsored by the <a href="http://www.smu.edu/engagedlearning">SMU Engaged Learning Grant</a> & Marr Research Fellowship</text></p>
-            <p><h6>Created with <a href="http://d3js.org/">D3.js</a>, <a href="http://momentjs.com/">Moment.js</a>, and <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a></h6></p>
+            <p><h6>Created with <a href="http://angularjs.org/">Angular.js</a>, <a href="http://d3js.org/">D3.js</a>, <a href="http://momentjs.com/">Moment.js</a>, and <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a></h6></p>
           </footer>
 
         </div><!--/.fluid-container-->

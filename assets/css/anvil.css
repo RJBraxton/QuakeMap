@@ -1,5 +1,6 @@
-html { 
+body { 
 /*background-color: #ffffff;*/
+	display: block;
   height:100%;
   background: #999; /* for non-css3 browsers */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#707070', endColorstr='#CCCCCC'); /* for IE */

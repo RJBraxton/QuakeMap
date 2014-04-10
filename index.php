@@ -107,11 +107,11 @@
                   <div id="two" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
                       <p>Magnitude is a number calculated to measure the relative size of an earthquake. Magnitude is calculated by seismographs across the globe, measuring the strength of waves as they travel away from their epicenter. Magnitude is shown by color and circle size:</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="Green">M2.0+</font>: Slightly felt by some. No chance of damage.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="Blue">M4.5+</font>: Felt by most within range. Shaking of some objects, small potential for damage to poorly-constructed buildings.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#805380">M6.0+</font>: Strong shaking, felt up to hundreds of miles away. Poorly-constructed buildings may collapse.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="Orange">M7.5+</font>: Damage to/collapse of most buildings; earthquake-resistent structures will also take heavy damage.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="Red">M8.5+</font>: High potential for certain destruction - permanent changes to the topography are made as a result. Populated areas near the epicenter are almost completely eliminated, death tolls are 1,000 at the very least.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#404096">M2.0+</font>: Slightly felt by some. No chance of damage.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#529DB7">M4.5+</font>: Felt by most within range. Shaking of some objects, small potential for damage to poorly-constructed buildings.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#7DB874">M6.0+</font>: Strong shaking, felt up to hundreds of miles away. Poorly-constructed buildings may collapse.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#E39C37">M7.0+</font>: Damage to/collapse of most buildings; earthquake-resistent structures will also take heavy damage.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#D92120">M8.5+</font>: High potential for certain destruction - permanent changes to the topography are made as a result. Populated areas near the epicenter are almost completely eliminated, death tolls are 1,000 at the very least.</p>
                       <p>
                         <i>The above descriptions are approximate.</i>
                       </p>
@@ -188,7 +188,7 @@
         <footer>
           <p>&copy; <a href="http://richardbraxton.org/bio/">Richard Braxton</a> 2013
             <text class="pull-right">Sponsored by the <a href="http://www.smu.edu/engagedlearning">SMU Engaged Learning Grant</a> & Marr Research Fellowship</text></p>
-            <p><h6>Created with <a href="http://d3js.org/">D3.js</a>, <a href="http://momentjs.com/">Moment.js</a>, and <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a></h6></p>
+            <p><h6>Created with <a href="http://angularjs.org/">Angular.js</a>, <a href="http://d3js.org/">D3.js</a>, <a href="http://momentjs.com/">Moment.js</a>, and <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a></h6></p>
           </footer>
 
         </div><!--/.fluid-container-->

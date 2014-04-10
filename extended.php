@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/javascript" src="http://zizhujy.com/Scripts/flot/navigationControl/jquery.flot.navigationControl.js"></script>
 <body ng-app="quakemap" > <!-- ; loadModal();' -->
   <?php include 'header.php'; ?>
 
@@ -20,7 +21,8 @@
           </button>
           <button class="btn btn-danger" ng-click="remove()"><i class="icon-stop"></i></button>
         </div>   
-        <button class="btn btn-info pull-right" data-toggle="modal" data-target="#helpModal">Help</button>         
+        <br/>
+        <button class="btn btn-info" data-toggle="modal" data-target="#helpModal">Help</button>         
         <hr class="style-cloud"/> 
         <div id="content">
 
@@ -46,6 +48,7 @@
             <br> E: <input class="input-mini" ng-model="settings.maxlongitude"></input> W: <input class="input-mini" ng-model="settings.minlongitude"></input>
           </div>
           <div class="tab-pane" id="download">
+          For further examination, raw data may be downloaded from USGS servers in the following formats:
             <ul>
             <li><a ng-href="{{urls.csv}}">CSV</a></li>
             <li><a ng-href="{{urls.geojson}}">GeoJSON</a></li>
@@ -73,12 +76,12 @@
       <svg id="map"width="960" height="500"
       viewBox="0 0 960 500"
       preserveAspectRatio="xMidYMid slice"></svg> </center></div>
-      <p class="text-center">
+      <div class="pull-left">
+{{$root.coors}}
+      </div>
+      <center>
         {{window.lastUpdated}}
-      </p>
-      <p class="text-left">
-      {{$root.coors}}
-      </p>
+      </center>
     </div><!-- /Well -->
   </div><!--/span9-->
 </div><!--/Container-->
@@ -94,7 +97,7 @@
   <footer>
     <p>&copy; <a href="http://richardbraxton.org/bio/">Richard Braxton</a> 2013 
       <text class="pull-right">Sponsored by the <a href="http://www.smu.edu/engagedlearning">SMU Engaged Learning Grant</a> & Marr Research Fellowship</text></p>
-      <p><h6>Created with <a href="http://d3js.org/">D3.js</a>, <a href="http://momentjs.com/">Moment.js</a>, and <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a></h6></p>
+      <p><h6>Created with <a href="http://angularjs.org/">Angular.js</a>, <a href="http://d3js.org/">D3.js</a>, <a href="http://momentjs.com/">Moment.js</a>, and <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a></h6></p>
     </footer>
 
   </div><!--/.fluid-container-->
@@ -107,9 +110,9 @@
         <h4 class="modal-title" id="myModalLabel"><center>Help</center></h4>
       </div>
       <div class="modal-body">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QuakeMap Extended is a more 'full-bodied' variation of the original QuakeMap web application. With it, it is possible to visually navigate the USGS earthquake database to locate seismic activity within a very specific depth/magnitude/time frame.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QuakeMap Extended is a more 'full-bodied' variation of the original QuakeMap web application. With it, it is possible to visually navigate the USGS earthquake database to locate seismic activity within a very specific depth/magnitude/time frame. The analysis graph at the bottom also allows for tracking of trends in earthquake depth and magnitude.
         <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The menu on the left allows you to specify the details of your query. Pressing the Start button will map them, using the original QuakeMap scales to denote depth and magnitude.
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Magnitue is designated by color. M2.0s are green, M4.5s blue, M7.5s orange, and M8.5s red.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Magnitue is designated by color. <font color="#404096">M2.0</font>, <font color="#529DB7">M4.5</font>, <font color="#7DB874">M6.0</font>, <font color="#E39C37">M7.0</font>, and <font color="#D92120">M8.5</font>.
         <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Depth is shown with the speed of the radiating circles. Slower animations indicate earthquakes that occur at great depths, while faster ones indicate shallow depths.
       </div>
       <div class="modal-footer">
@@ -135,4 +138,4 @@
     });
     </script>
   </body>
-  </html>
+  </html>	

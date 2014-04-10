@@ -12,7 +12,7 @@ quakemap.run(function($rootScope){
 	var oS = 1; //Scale Variable
 	  //Defining zooming nonsense
 	  var zoom = d3.behavior.zoom();
-	  zoom.scaleExtent([1, 7])
+	  zoom.scaleExtent([1, 10])
 	  .on("zoom", redraw);
 	  function redraw() {
 	  	var t = d3.event.translate;
