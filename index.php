@@ -81,58 +81,7 @@
               </div>)
            </div>
            <hr class="style-cloud"/>
-
-  <div class="accordion">
-                <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#Instructions">
-                      <strong>Instructions</strong>
-                    </a>
-                  </div>
-                  <div id="Instructions" class="accordion-body collapse" style="height: 0px;">
-                    <div class="accordion-inner">
-                      <p>
-                       QuakeMap is an earthquake visualization tool, allowing people to view earthquakes over the past year. It uses data from the <a href="http://www.usgs.gov/">USGS</a>, which updates every ~15 minutes.</p>
-                       <p>With the prompt above, you may select what range of recent earthquakes to view. Details may be found in the menus below.
-                       </p>
-                      </p>
-                    </div>
-                  </div>
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#two">
-                      <strong>Magnitude</strong>
-                    </a>
-                  </div>
-                  <div id="two" class="accordion-body collapse" style="height: 0px;">
-                    <div class="accordion-inner">
-                      <p>Magnitude is a number calculated to measure the relative size of an earthquake. Magnitude is calculated by seismographs across the globe, measuring the strength of waves as they travel away from their epicenter. Magnitude is shown by color and circle size:</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#404096">M2.0+</font>: Slightly felt by some. No chance of damage.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#529DB7">M4.5+</font>: Felt by most within range. Shaking of some objects, small potential for damage to poorly-constructed buildings.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#7DB874">M6.0+</font>: Strong shaking, felt up to hundreds of miles away. Poorly-constructed buildings may collapse.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#E39C37">M7.0+</font>: Damage to/collapse of most buildings; earthquake-resistent structures will also take heavy damage.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#D92120">M8.5+</font>: High potential for certain destruction - permanent changes to the topography are made as a result. Populated areas near the epicenter are almost completely eliminated, death tolls are 1,000 at the very least.</p>
-                      <p>
-                        <i>The above descriptions are approximate.</i>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#three">
-                      <strong>Depth</strong>
-                    </a>
-                  </div>
-                  <div id="three" class="accordion-body collapse" style="height: 0px;">
-                    <div class="accordion-inner">
-                      <p>Earthquakes may occur at many different depths within the earth - shallow earthquakes tend to be stronger than deep ones, as the shock waves are closer to the surface. Depth is shown by speed - deep earthquakes pulse slowly, while shallow ones pulse quickly.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+           <button class="btn btn-large btn-info" data-toggle="modal" data-target="#instructions">Instructions</button>         
           </div>
         </div>
 
@@ -192,6 +141,36 @@
           </footer>
 
         </div><!--/.fluid-container-->
+        <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><center>Instructions</center></h4>
+      </div>
+      <div class="modal-body">
+        <h4>Instructions</h4>
+        QuakeMap is an earthquake visualization tool, allowing people to view earthquakes over the past year. It uses data from the <a href="http://www.usgs.gov/">USGS</a>, which updates every ~15 minutes.</p>
+                       <p>With the prompt above, you may select what range of recent earthquakes to view. Details may be found below.
+                       <br> <h4>Magnitude</h4>
+                       <p>Magnitude is a number calculated to measure the relative size of an earthquake. Magnitude is calculated by seismographs across the globe, measuring the strength of waves as they travel away from their epicenter. Magnitude is shown by color and circle size:</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#404096">M2.0+</font>: Slightly felt by some. No chance of damage.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#529DB7">M4.5+</font>: Felt by most within range. Shaking of some objects, small potential for damage to poorly-constructed buildings.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#7DB874">M6.0+</font>: Strong shaking, felt up to hundreds of miles away. Poorly-constructed buildings may collapse.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#E39C37">M7.0+</font>: Damage to/collapse of most buildings; earthquake-resistent structures will also take heavy damage.</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#D92120">M8.5+</font>: High potential for certain destruction - permanent changes to the topography are made as a result. Populated areas near the epicenter are almost completely eliminated, death tolls are 1,000 at the very least.</p>
+                      <p>
+                        <i>The above descriptions are approximate.</i>
+                      </p>
+                      <h4>Depth</h4>
+                      <p>Earthquakes may occur at many different depths within the earth - shallow earthquakes tend to be stronger than deep ones, as the seismic waves are closer to the surface. Depth is shown by speed - deep earthquakes pulse slowly, while shallow ones pulse quickly.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Le javascript
     ================================================== -->
