@@ -1,5 +1,3 @@
-
-<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>QuakeMap by Richard Braxton</title>
@@ -30,8 +28,9 @@
   }
 
 
+
   </style>
-  <link href="./assets/css/bootstrap.css" rel="stylesheet">
+  <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="./assets/css/jquery-ui-1.10.3.custom.css" media="screen" rel="stylesheet" type="text/css" />
 

@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <script type="text/javascript" src="http://zizhujy.com/Scripts/flot/navigationControl/jquery.flot.navigationControl.js"></script>
 <body ng-app="quakemap" > <!-- ; loadModal();' -->

@@ -1,7 +1,7 @@
-<!doctype html><?php include 'header.php'; ?>
-
+<!DOCTYPE html>
+<html lang="en">
 <body onload='mapWorld(); table();'> <!-- ; loadModal();' -->
-  
+  <?php include 'header.php'; ?>
   <script src="earthquakes.js" type="text/javascript"></script>
   
   
@@ -94,16 +94,11 @@
           
 
 
-          <!-- <div>
+          <div>
           <center> 
             <svg id="map"width="960" height="500"
             viewBox="0 0 960 500"
-            ></svg> </center></div> -->
-            <center><svg id="map"
-            viewBox="0 0 960 500"
-      preserveAspectRatio="xMidYMid"
-      ></svg></center></center>
-
+            preserveAspectRatio="xMidYMid slice"></svg> </center></div>
             <p class="text-center">
               <text id="updated"></text>
             </p>
