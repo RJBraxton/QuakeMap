@@ -94,11 +94,12 @@
           
 
 
-          <div>
+          <div style="position:relative">
           <center> 
-            <svg id="map"width="960" height="500"
+            <svg id="map"
             viewBox="0 0 960 500"
-            preserveAspectRatio="xMidYMid slice"></svg> </center></div>
+            preserveAspectRatio=" xMidyMid slice"
+            ></svg> </center></div>
             <p class="text-center">
               <text id="updated"></text>
             </p>

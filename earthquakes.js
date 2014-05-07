@@ -52,6 +52,14 @@ function removeQuakes(){
 /*--------------- begin_mapWorld --------------------------------------------------------------------------------------------------------------*/
 function mapWorld(){
   
+if (bowser.msie) {
+  d3.select('#map').attr('height','700');
+}
+else{
+ d3.select('#map').attr('height','100%'); 
+ d3.select('#map').attr('width','100%');
+}
+
   //Defining zooming nonsense
   var zoom = d3.behavior.zoom();
   zoom.scaleExtent([1, 4])

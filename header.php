@@ -26,10 +26,8 @@
       padding-right: 5px;
     }
   }
-
-
-
   </style>
+
   <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="./assets/css/jquery-ui-1.10.3.custom.css" media="screen" rel="stylesheet" type="text/css" />
@@ -38,6 +36,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
   <!-- moment -->
   <script src="http://momentjs.com/downloads/moment.min.js"></script>
+  <!-- Bowser -->
+<script src="./assets/js/bowser.js"></script>
   <!-- d3 -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
