@@ -26,7 +26,9 @@ var frequency = d3.scale.linear()
 .domain([600, 0])
 .range([8500, 2000]);
 
-var colorMagScale = d3.scale.linear().domain([2.0,4.0,6.0,7.0,8.0]).range(["#404096","#529DB7", "#7DB874","#E39C37", "#D92120"]);
+var colorMagScale = d3.scale.linear()
+.domain([2.0,4.5,7.0,8.5])
+.range(["green","blue", "orange","red"]);
 
 /*--------------- begin_removeQuakes --------------------------------------------------------------------------------------------------------------*/
 function removeQuakes(){
@@ -153,9 +155,9 @@ function quakeMake(days,sortBy,minMag,limit){
 
 quakes.append("circle")
 .attr("class","quakeStatic")
-.attr("r", 1.5)
+.attr("r", 2.5)
 .style("stroke", function(d) {return colorMagScale(d.properties.mag);})          
-.style("stroke-width", 0.75)
+.style("stroke-width", 1.45)
 .on("click", function(d){ onClick(d);});
 
 d3.selectAll(".quakes").attr("transform", "translate(" + oT + ")scale(" + oS + ")");

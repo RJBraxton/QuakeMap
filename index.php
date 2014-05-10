@@ -150,21 +150,18 @@
         <h4 class="modal-title" id="myModalLabel"><center>Instructions</center></h4>
       </div>
       <div class="modal-body">
-        <h4>Instructions</h4>
         QuakeMap is an earthquake visualization tool, allowing people to view earthquakes over the past year. It uses data from the <a href="http://www.usgs.gov/">USGS</a>, which updates every ~15 minutes.</p>
-                       <p>With the prompt above, you may select what range of recent earthquakes to view. Details may be found below.
+                       <p>With the prompt menu along the left side, you may select what range of recent earthquakes to view. Details may be found below.
                        <br> <h4>Magnitude</h4>
-                       <p>Magnitude is a number calculated to measure the relative size of an earthquake. Magnitude is calculated by seismographs across the globe, measuring the strength of waves as they travel away from their epicenter. Magnitude is shown by color and circle size:</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#404096">M2.0+</font>: Slightly felt by some. No chance of damage.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#529DB7">M4.5+</font>: Felt by most within range. Shaking of some objects, small potential for damage to poorly-constructed buildings.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#7DB874">M6.0+</font>: Strong shaking, felt up to hundreds of miles away. Poorly-constructed buildings may collapse.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#E39C37">M7.0+</font>: Damage to/collapse of most buildings; earthquake-resistent structures will also take heavy damage.</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#D92120">M8.5+</font>: High potential for certain destruction - permanent changes to the topography are made as a result. Populated areas near the epicenter are almost completely eliminated, death tolls are 1,000 at the very least.</p>
-                      <p>
-                        <i>The above descriptions are approximate.</i>
-                      </p>
+                       <p> Each earthquake on the map is represented by a radiating circle. The color of the circle indicates the range in the magnitude of the event. 
+                      <p><svg width="20" height="20"> <circle cx="10" cy="10" r='5' fill="transparent" stroke="green" stroke-width="0.75" /> </svg> M2.0-M4.5 (Green)</p>
+                      <p><svg width="20" height="20"> <circle cx="10" cy="10" r='5' fill="transparent" stroke="blue" stroke-width="0.75" /> </svg> M4.5-M7.5 (Blue)</p>
+                      <p><svg width="20" height="20"> <circle cx="10" cy="10" r='5' fill="transparent" stroke="orange" stroke-width="0.75" /> </svg> M7.0-M8.5 (Orange)</p>
+                      <p><svg width="20" height="20"> <circle cx="10" cy="10" r='5' fill="transparent" stroke="red" stroke-width="0.75" /> </svg> M8.5+ (Red)</p>
+                       </p>
                       <h4>Depth</h4>
-                      <p>Earthquakes may occur at many different depths within the earth - shallow earthquakes tend to be stronger than deep ones, as the seismic waves are closer to the surface. Depth is shown by speed - deep earthquakes pulse slowly, while shallow ones pulse quickly.</p>
+                      <p>The speed of the circle's animation indicates the depth - slowly radiating circles occur deep below the surface (500km+), and fast ones being shallow. Individual quakes can be clicked to display detailed information, and the map can also be zoomed/panned.</p>
+                      <p>From the menu along the top of the page, QuakeMap can be switched between Basic and Extended Mode. Extended Mode allows for searches to specify exact dates, magnitude and depth ranges, and location (latitudinal + longitudinal range). Below the visualization in Extended Mode, there is a chart that plots all results based on time and depth, which can help with tracking patterns and aftershocks between earthquakes that occur small areas.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

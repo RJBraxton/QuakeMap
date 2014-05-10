@@ -73,9 +73,10 @@
   <div>
     <center> 
       <div class="errorlog"> </div> 
-      <svg id="map"width="960" height="500"
-      viewBox="0 0 960 500"
-      preserveAspectRatio="xMidYMid slice"></svg> </center></div>
+      <svg id="map"
+            viewBox="0 0 960 500"
+            preserveAspectRatio=" xMidyMid slice"
+            ></svg>  </center></div>
       <div class="pull-left">
 {{$root.coors}}
       </div>

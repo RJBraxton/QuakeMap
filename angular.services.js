@@ -32,9 +32,9 @@ quakemap.factory('functions', function($rootScope, $http, $interval){
 				.attr("transform", function(d) {return "translate(" + $rootScope.projection(d.geometry.coordinates)[0] + "," + $rootScope.projection(d.geometry.coordinates)[1] + ")";});
 				quakes.append("circle")
 				.attr("class","quakeStatic")
-				.attr("r", 1.5)
+				.attr("r", 2.5)
 				.style("stroke", function(d) {return colorMagScale(d.properties.mag);})          
-				.style("stroke-width", 0.75)
+				.style("stroke-width", 1.45)
 				.on("click",  function(d){
 					$scope.click(d);
 				});
@@ -73,7 +73,7 @@ quakemap.directive('chart', [function() {
   return {
     restrict: 'E',
     link: function(scope, elem, attrs) {
-    	var scale = d3.scale.linear().domain([2.0,4.0,6.0,7.0,8.0]).range(["#404096","#529DB7", "#7DB874","#E39C37", "#D92120"]);;
+    	var scale = d3.scale.linear().domain([2.0,4.5,7.0,8.5]).range(["green","blue", "orange","red"]);
     	var foo = scope[attrs.ngModel];
 
 
