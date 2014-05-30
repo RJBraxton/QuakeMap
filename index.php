@@ -8,21 +8,6 @@
 
       <div class="container-fluid">
        <div class="row-fluid">
-          <!-- <div class="span2 well">
-            <center>Scale</center>
-            <p>
-              <svg>
-                <rect x="0" y="0" width="20" height="20" fill="green" onmouseover="this.call(bootstrap.tooltip().placement('right')) "/>
-                <rect x="30" y="0" width="20" height="20" fill="blue"/>
-                <rect x="60" y="0" width="20" height="20" fill="purple"/>
-                <rect x="90" y="0" width="20" height="20" fill="orange"/>
-                <rect x="120" y="0" width="20" height="20" fill="red"/>
-              </svg>
-              <a href="#" rel="tooltip" data-toggle="tooltip" title="" data-original-title="Default tooltip">you probably</a>
-
-            </p>
-
-          </div> -->
           <div class="span3">
             <div class="well">
               <div class="btn-group">

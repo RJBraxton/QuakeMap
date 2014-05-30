@@ -6,6 +6,15 @@
 var quakemap = angular.module('quakemap', []);
 
 quakemap.run(function($rootScope){
+
+	if (bowser.msie) {
+  d3.select('#map').attr('height','700');
+}
+else{
+ d3.select('#map').attr('height','100%'); 
+ d3.select('#map').attr('width','100%');
+}
+	
 		//ZOOM/PROJECTION
 		$rootScope.projection = d3.geo.winkel3();
 	var oT = [0,0]; //Translate variable
@@ -14,6 +23,7 @@ quakemap.run(function($rootScope){
 	  var zoom = d3.behavior.zoom();
 	  zoom.scaleExtent([1, 10])
 	  .on("zoom", redraw);
+
 	  function redraw() {
 	  	var t = d3.event.translate;
 	  	var s = d3.event.scale;
