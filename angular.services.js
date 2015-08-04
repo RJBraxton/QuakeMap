@@ -8,7 +8,11 @@ quakemap.factory('functions', function($rootScope, $http, $interval){
 					var query = query + "&" + property + "=" + $scope.settings[property];
 				}
 			}
+<<<<<<< HEAD
+			$http({method: 'GET', url: ("http://www.corsproxy.com/earthquake.usgs.gov/fdsnws/event/1/query?" + query + "&format=geojson")})	
+=======
 			$http({method: 'GET', url: ("http://www.corsproxy.com/comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=geojson")})	
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
 			.success(function(data){
 				$scope.data = [];
 				for (i=0; i<data.features.length;i++){
@@ -19,10 +23,17 @@ quakemap.factory('functions', function($rootScope, $http, $interval){
 				$scope.errorCheck(true);
 				$scope.window.lastUpdated = "Last updated at " + moment().format("hh:mma");
 				$scope.window.count = data.metadata.count;
+<<<<<<< HEAD
+				$scope.urls.csv = "http://earthquake.usgs.gov/fdsnws/event/1/query?" + query + "&format=csv";
+				$scope.urls.geojson = "http://earthquake.usgs.gov/fdsnws/event/1/query?" + query + "&format=geojson";
+				$scope.urls.kml = "http://earthquake.usgs.gov/fdsnws/event/1/query?" + query + "&format=kml";
+				$scope.urls.xml = "http://earthquake.usgs.gov/fdsnws/event/1/query?" + query + "&format=xml";
+=======
 				$scope.urls.csv = "http://comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=csv";
 				$scope.urls.geojson = "http://comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=geojson";
 				$scope.urls.kml = "http://comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=kml";
 				$scope.urls.xml = "http://comcat.cr.usgs.gov/fdsnws/event/1/query?" + query + "&format=xml";
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
 				quakes = d3.select("#map").append("g")
 				.attr("class", "quakes") 
 				.selectAll(".quake")

@@ -36,6 +36,19 @@ function removeQuakes(){
   grassOnTheField = false;  
   clearInterval(quakeanim);
   d3.select(".s_mag")
+<<<<<<< HEAD
+  .text(' ')
+  d3.select(".s_time")
+  .text(' ')
+  d3.select(".s_location")
+  .text(' ')
+  d3.select(".s_tsunami")
+  .text(' ')
+  d3.select(".total")
+  .text('-');
+  d3.select("#updated")
+  .text('-');
+=======
     .text(' ')
   d3.select(".s_time")
     .text(' ')
@@ -47,12 +60,23 @@ function removeQuakes(){
     .text('-');
   d3.select("#updated")
     .text('-');
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
   console.log("removequakes has been run");
 }
 /*--------------- end_removeQuakes --------------------------------------------------------------------------------------------------------------*/
 
 /*--------------- begin_mapWorld --------------------------------------------------------------------------------------------------------------*/
 function mapWorld(){
+<<<<<<< HEAD
+
+  if (bowser.msie) {
+    d3.select('#map').attr('height','700');
+  }
+  else{
+   d3.select('#map').attr('height','100%'); 
+   d3.select('#map').attr('width','100%');
+ }
+=======
   
 if (bowser.msie) {
   d3.select('#map').attr('height','700');
@@ -61,11 +85,16 @@ else{
  d3.select('#map').attr('height','100%'); 
  d3.select('#map').attr('width','100%');
 }
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
 
   //Defining zooming nonsense
   var zoom = d3.behavior.zoom();
   zoom.scaleExtent([1, 4])
+<<<<<<< HEAD
+  .on("zoom", redraw);
+=======
     .on("zoom", redraw);
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
   function redraw() {
     var t = d3.event.translate;
     var s = d3.event.scale;
@@ -80,6 +109,32 @@ else{
   }
 
   var path = d3.geo.path()
+<<<<<<< HEAD
+  .projection(projection);
+  var graticule = d3.geo.graticule();
+  var svg = d3.select("#map")
+  .append("svg")
+  .call(zoom)
+  .append("g");
+  svg.append("defs").append("path")
+  .attr("class","map")
+  .datum({type: "Sphere"})
+  .attr("id", "sphere")
+  .attr("d", path);
+  svg.append("use")
+  .attr("class", "stroke")
+  .attr("xlink:href", "#sphere");
+  svg.append("path")
+  .datum(graticule.outline)
+  .attr("class", "water")
+  .attr("d", path);
+  svg.append("g")
+  .attr("class", "graticule")
+  .selectAll("path")
+  .data(graticule.lines)
+  .enter().append("path")
+  .attr("d", path);
+=======
     .projection(projection);
   var graticule = d3.geo.graticule();
   var svg = d3.select("#map")
@@ -104,10 +159,20 @@ else{
     .data(graticule.lines)
     .enter().append("path")
     .attr("d", path);
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
 
   d3.json("world-110m.json", function(error, world) {
     //Mapping the earf
     svg.insert("path", ".graticule")
+<<<<<<< HEAD
+    .datum(topojson.object(world, world.objects.land))
+    .attr("class", "land")
+    .attr("d", path);
+    svg.insert("path", ".graticule")
+    .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a.id !== b.id; }))
+    .attr("class", "borders")
+    .attr("d", path);
+=======
       .datum(topojson.object(world, world.objects.land))
       .attr("class", "land")
       .attr("d", path);
@@ -115,6 +180,7 @@ else{
       .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a.id !== b.id; }))
       .attr("class", "borders")
       .attr("d", path);
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
   });
   d3.json('tectonics.json', function(err, data) {
     //Mapping the tectonic plate borders
@@ -137,8 +203,14 @@ function quakeMake(days,sortBy,minMag,limit){
     grassOnTheField = true;
     var svg = d3.select("#map");
     
+<<<<<<< HEAD
+    //Actual QuakeMapping done here
+    var jqxhr = $.getJSON( "http://earthquake.usgs.gov/fdsnws/event/1/query?starttime=NOW-" + days + " days&minmagnitude=" + minMag + "&maxmagnitude=" + maxMag + "&orderby=" + sortBy + "&limit=" + limit + "&format=geojson", function(data) {
+      console.log( "Data acquired.");
+=======
     //Actual QuakeMapping done here    
     d3.json(("http://www.corsproxy.com/comcat.cr.usgs.gov/fdsnws/event/1/query?starttime=NOW-" + days + " days&minmagnitude=" + minMag + "&maxmagnitude=" + maxMag + "&orderby=" + sortBy + "&limit=" + limit + "&format=geojson"), function(err, data) {
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
       d3.select("#updated").text("Last updated at " + moment().format("hh:mma"));
       var count = d3.select(".total")
       .text(data.metadata.count);
@@ -153,6 +225,17 @@ function quakeMake(days,sortBy,minMag,limit){
       .attr("transform", function(d) {return "translate(" + projection(d.geometry.coordinates)[0] + "," + projection(d.geometry.coordinates)[1] + ")";});
       quakeAnimate();
 
+<<<<<<< HEAD
+      quakes.append("circle")
+      .attr("class","quakeStatic")
+      .attr("r", 2.5)
+      .style("stroke", function(d) {return colorMagScale(d.properties.mag);})          
+      .style("stroke-width", 1.45)
+      .on("click", function(d){ onClick(d);});
+
+      d3.selectAll(".quakes").attr("transform", "translate(" + oT + ")scale(" + oS + ")");
+    });    
+=======
 quakes.append("circle")
 .attr("class","quakeStatic")
 .attr("r", 2.5)
@@ -163,6 +246,7 @@ quakes.append("circle")
 d3.selectAll(".quakes").attr("transform", "translate(" + oT + ")scale(" + oS + ")");
 
 });
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
 
 }
 
@@ -173,6 +257,26 @@ function quakeAnimate(){
 
   if(animationOn == true){
 
+<<<<<<< HEAD
+   quakeanim = setInterval(function() {  
+    console.log('interval!');
+    quakes.filter(function(d){ return d.properties.mag > 4.0;})
+    .append("circle")
+    .attr("class","quakeAnim")
+    .attr("r", 0)
+    .style("stroke", function(d) {return colorMagScale(d.properties.mag);  })          
+    .style("stroke-width", 2)
+    .on("click", function(d){ onClick(d);})
+    .transition()
+    .ease("circle")
+    .duration(function(d) { return frequency(d.geometry.coordinates[2]); })
+    .attr("r", function(d) { return radius(d.properties.mag); })
+    .style("stroke-opacity", 0)
+    .style("stroke-width", 0)
+    .remove();
+  }, 1000);
+ }    
+=======
        quakeanim = setInterval(function() {  
         console.log('interval!');
         quakes.filter(function(d){ return d.properties.mag > 4.0;})
@@ -191,11 +295,41 @@ function quakeAnimate(){
         .remove();
       }, 1000);
 }    
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
 }
 
 
 function table(){
 
+<<<<<<< HEAD
+
+  $.getJSON("http://earthquake.usgs.gov/fdsnws/event/1/query?starttime=NOW-7days&orderby=magnitude&limit=5&format=geojson", function(data) {
+    data = data.features;
+
+    data.filter(function(d){ return d.properties.mag > 5.0;})
+    .sort(function(a,b){ return d3.descending(a.properties.mag, b.properties.mag);})
+    .forEach(function(d) {
+      var current = d3.select("#tablebody").append("tr");
+      current.append("td").text(moment(+d.properties.time).calendar());
+      current.append("td").append("a").text(d.properties.place).attr("href",d.properties.url);
+      current.append("td").text(d.properties.mag).style("color",colorMagScale(d.properties.mag));
+      return true;
+    });
+
+  });
+
+}
+
+function onClick(d){
+  d3.select(".s_mag")
+  .text("M" + d.properties.mag + " (" + d.geometry.coordinates[2] + "km) - ").style("color",colorMagScale(d.properties.mag))
+  d3.select(".s_time")
+  .text( moment(+d.properties.time).calendar())
+  d3.select(".s_location")
+  .text(d.properties.place + " - ")
+  d3.select(".s_url")
+  .attr("href",d.properties.url);
+=======
   
   d3.json("http://www.corsproxy.com/comcat.cr.usgs.gov/fdsnws/event/1/query?starttime=NOW-7days&orderby=magnitude&limit=5&format=geojson", function(err, data) {
     data = data.features;
@@ -223,4 +357,5 @@ d3.select(".s_mag")
           .text(d.properties.place + " - ")
           d3.select(".s_url")
           .attr("href",d.properties.url);
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
 }

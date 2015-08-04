@@ -68,7 +68,11 @@
         <a class="brand" href="./index.php">QuakeMap</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
+<<<<<<< HEAD
+          <!-- <li><a href="./extended.php">QuakeMap Extended</a></li> -->
+=======
           <li><a href="./extended.php">QuakeMap Extended</a></li>
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
             <li><a href="./about.php">About/Contact</a></li>
                 <!-- <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li> -->

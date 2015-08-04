@@ -73,7 +73,11 @@ app = angular.module("myApp", []);
 app.controller('AppCtrl', function ($scope,$http) {
   $scope.loading = true;
 
+<<<<<<< HEAD
+  var url = "http://www.corsproxy.com/earthquake.usgs.gov/fdsnws/event/1/query?starttime=NOW-7days&orderby=magnitude&format=geojson";
+=======
   var url = "http://www.corsproxy.com/comcat.cr.usgs.gov/fdsnws/event/1/query?starttime=NOW-7days&orderby=magnitude&format=geojson";
+>>>>>>> 551392bab2046ba16d58b21451c1f0cec8fdbc3b
   $scope.mainInfo = null;
   $http.get(url).success(function(data) {
     $scope.mainInfo = data.features;
